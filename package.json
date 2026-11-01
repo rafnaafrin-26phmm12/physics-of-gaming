@@ -1,0 +1,28 @@
+{
+  "name": "gaming_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0",
+    "mongodb": "^7.8.0",
+    "mongoose": "^9.11.4",
+    "sqlite3": "^6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafnaafrin-26phmm12/Physics-Gaming-Simulator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rafnaafrin-26phmm12/Physics-Gaming-Simulator/issues"
+  },
+  "homepage": "https://github.com/rafnaafrin-26phmm12/Physics-Gaming-Simulator#readme"
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics of Gaming: 2D Billiards Sandbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2D Billiards & Projectile Sandbox</h1>
+            <p>Physics Engine & Vector Calculus Simulator</p>
+        </header>
+
+        <div class="workspace">
+            <!-- Canvas Workspace -->
+            <div class="canvas-container">
+                <canvas id="billiardsCanvas" width="800" height="400"></canvas>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="control-panel">
+                <h3>Launch Configuration</h3>
+                <form id="launchForm">
+                    <div class="form-group">
+                        <label for="launchAngle">Launch Angle (Degrees: 0-360):</label>
+                        <input type="number" id="launchAngle" min="0" max="360" value="45" required>
+                        <span class="error-msg" id="angleError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="initialVelocity">Initial Velocity (px/s: 10-500):</label>
+                        <input type="number" id="initialVelocity" min="10" max="500" value="200" required>
+                        <span class="error-msg" id="velocityError"></span>
+                    </div>
+
+                    <button type="button" id="launchBtn">Fire Cue Ball</button>
+                    <button type="button" id="resetBtn" class="secondary-btn">Reset Table</button>
+                </form>
+
+                <div class="telemetry">
+                    <h3>Live Telemetry</h3>
+                    <p>Cue Ball Pos: X: <span id="telX">0.00</span>, Y: <span id="telY">0.00</span></p>
+                    <p>Target Ball Pos: X: <span id="telTargetX">0.00</span>, Y: <span id="telTargetY">0.00</span></p>
+                    <p>System Kinetic Energy: <span id="telKE">0.00</span> J</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sandbox.js"></script>
+</body>
+</html>

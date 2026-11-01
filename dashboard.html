@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collision Dynamics & Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Server Analytics Dashboard</h1>
+            <p><a href="index.html" style="color:var(--accent);">← Back to Sandbox Workspace</a></p>
+        </header>
+
+        <div class="control-panel" style="width: 100%;">
+            <h3>Historical Vector Trajectory Logs (SQLite Persistence State)</h3>
+            <table id="logsTable" style="width: 100%; border-collapse: collapse; margin-top: 15px; color: white;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--accent); text-align: left;">
+                        <th style="padding: 10px;">Shot ID</th>
+                        <th>Launch Angle (Deg)</th>
+                        <th>Initial Velocity (px/s)</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="logsBody">
+                    <!-- Dynamic Data Injection -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Fetch persistence data records 
+        fetch('/api/simulation/history')
+            .then(res => res.json())
+            .then(data => {
+                const tbody = document.getElementById('logsBody');
+                tbody.innerHTML = data.map(row => `
+                    <tr style="border-bottom: 1px solid #333;">
+                        <td style="padding: 10px;">${row.ShotID}</td>
+                        <td>${row.LaunchAngle}°</td>
+                        <td>${row.InitialVelocity} px/s</td>
+                        <td>${row.Timestamp}</td>
+                    </tr>
+                `).join('');
+            });
+    </script>
+</body>
+</html>

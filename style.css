@@ -1,0 +1,132 @@
+:root {
+    --bg-primary: #121214;
+    --bg-surface: #1e1e24;
+    --table-green: #0d5c3a;
+    --table-border: #5c3a21;
+    --accent: #00adb5;
+    --text: #eeeeee;
+    --error: #ff2e63;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--accent);
+}
+
+.workspace {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.canvas-container {
+    flex: 1;
+    min-width: 600px;
+    background-color: var(--table-border);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+canvas {
+    background-color: var(--table-green);
+    display: block;
+    border: 5px inset rgba(0,0,0,0.3);
+    border-radius: 4px;
+}
+
+.control-panel {
+    width: 320px;
+    background-color: var(--bg-surface);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #2d2d35;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #00fff5;
+}
+
+.secondary-btn {
+    background-color: #444;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #555;
+}
+
+.error-msg {
+    color: var(--error);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 4px;
+}
+
+.telemetry {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+}
+
+.telemetry p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
